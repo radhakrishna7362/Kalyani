@@ -1,0 +1,80 @@
+N.V.S.K. Kalyani
+174n1a0584
+CSE - C
+
+                              Aim 5:- Application by using CheckBox control.
+
+activity_main.xml:
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Items you Want"/>
+    <CheckBox
+        android:id="@+id/checkbox_pizza"
+        android:layout_height="wrap_content"
+        android:text="pizza   $15"
+        android:layout_width="match_parent"/>
+    <CheckBox
+        android:id="@+id/checkbox_hotdog"
+        android:layout_height="wrap_content"
+        android:text="Hot Dog  $5"
+        android:layout_width="match_parent"/>
+    <CheckBox
+        android:id="@+id/checkbox_burger"
+        android:layout_height="wrap_content"
+        android:text="Burger  $10"
+        android:layout_width="match_parent"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bill_btn"
+        android:text="Calculate Bill"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/amount"/>
+</LinearLayout>
+
+MainActivity.java:-
+
+package  com.example.checkbox;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.CheckBox;
+import android.view.View;
+import android.view.View.OnClickListener;
+public class MainActivity extends Activity implements OnClickListener{
+    CheckBox c1,c2,c3;
+    TextView resp;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button b=(Button)this.findViewById(R.id.bill_btn);
+        resp=(TextView)this.findViewById(R.id.amount);
+        c1=(CheckBox)this.findViewById(R.id.checkbox_pizza);
+        c2=(CheckBox)this.findViewById(R.id.checkbox_hotdog);
+        c3=(CheckBox)this.findViewById(R.id.checkbox_burger);
+        b.setOnClickListener(this);
+    }
+    public void onClick(View v){
+        int amt=0;
+        if(c1.isChecked()){
+            amt=amt+15;
+        }
+        if(c2.isChecked()){
+            amt=amt+5;
+        }
+        if(c3.isChecked()){
+            amt=amt+10;
+        }
+        resp.setText("Bill is"+Integer.toString(amt));
+    }
+}

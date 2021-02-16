@@ -1,0 +1,20 @@
+<html>
+<body>
+
+
+
+<button onclick="myFunction()">click</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var str = "helloo world";
+  var patt = /lo*/g;
+  var result = str.match(patt);
+  document.getElementById("demo").innerHTML = result;
+}
+</script>
+
+</body>
+</html>

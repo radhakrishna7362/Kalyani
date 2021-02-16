@@ -1,0 +1,62 @@
+
+                              Aim 6:- Application by using RadioButton control.
+
+activity_main.xml:-
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select the type of hotel"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/radio_fivestar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Five Star"/>
+        <RadioButton
+            android:id="@+id/radio_threestar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Three Star"/>
+    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hoteltype"/>
+</LinearLayout>
+
+mainActivity.java:-
+
+package com.example.radiobutton;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.RadioButton;
+import android.view.View;
+import android.view.View.OnClickListener;
+public class MainActivity extends Activity{
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        RadioButton radioFivestar=(RadioButton)findViewById(R.id.radio_fivestar);
+        RadioButton radioThreestar=(RadioButton)findViewById(R.id.radio_threestar);
+        radioFivestar.setOnClickListener(radioListener);
+        radioThreestar.setOnClickListener(radioListener);
+    }
+    private OnClickListener radioListener=new OnClickListener(){
+        public void onClick(View v){
+            TextView selectedHotel=(TextView)findViewById(R.id.hoteltype);
+            RadioButton rb=(RadioButton) v;
+            selectedHotel.setText("The hotel type selected is:" + rb.getText());
+        }
+    };
+}

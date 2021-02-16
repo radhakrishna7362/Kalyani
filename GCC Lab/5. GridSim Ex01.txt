@@ -1,0 +1,29 @@
+174N1A0584
+N.V.S.K. kALYANI
+4TH b.TECH cse
+sEC: c
+                                       
+                                            5. GridSim Program Example01
+
+
+C:\>cd C:\GridSim5-2\GridSim\examples
+
+C:\GridSim5-2\GridSim\examples>javac C:\GridSim5-2\GridSim\examples\gridsim\exam
+ple01\Example1.java
+
+C:\GridSim5-2\GridSim\examples>java gridsim.example01.Example1
+Starting example of how to create one Grid resource
+Initializing GridSim package
+Initialising...
+Starting to create one Grid resource with 3 Machines ...
+Creates a Machine list
+Creates the 1st Machine that has 4 PEs and stores it into the Machine list
+Creates the 2nd Machine that has 4 PEs and stores it into the Machine list
+Creates the 3rd Machine that has 2 PEs and stores it into the Machine list
+
+Creates the properties of a Grid resource and stores the Machine list
+Finally, creates one Grid resource and stores the properties of a Grid resource
+Finish the 1st example
+
+
+

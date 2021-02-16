@@ -1,0 +1,53 @@
+N.V.S.K. Kalyani
+174n1a0584
+CSE - C
+  
+                                Aim 8: Create LINEAR LAYOUT Application.
+
+activity_main.xml:-
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/Apple"
+        android:text="Apple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_weight="1.0"        />
+    <Button
+        android:id="@+id/Mango"
+        android:text="Mango"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_weight="1.0"/>
+    <Button
+        android:id="@+id/Banana"
+        android:text="Banana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:layout_weight="1.0"
+        android:layout_gravity="right"/>
+</LinearLayout>
+
+MainActivity.java:-
+
+package com.example.linearlayout;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}

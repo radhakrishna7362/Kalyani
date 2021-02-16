@@ -1,0 +1,47 @@
+<html>
+<body>
+
+<p >Click the button to demonstrate Exception handling </p>
+
+<button  onclick="RunTest()" >Touch me</button>
+
+<p id="message"></p>
+
+<script>
+ function isalpha(str) {
+var f=0;
+for(i=0;i<str.length;i++)
+   {
+    if (((str[i] >= 'a') && (str[i] <= 'z')) || ((str[i] >= 'A') && (str[i] <= 'Z')))
+       f=0;
+    else
+    f=1;
+}
+if (f==0)
+return 1;
+else
+return 0;
+  }
+function RunTest() {
+    var str = prompt("Please enter any string", "sambasiva");
+
+
+
+try { 
+        if(str == "") throw "is empty";
+      else if(!isalpha(str)) throw "string must contain alphabets only";
+       else 
+          document.getElementById("message").innerHTML =
+        "Entered string: " + str;
+
+    }
+
+    catch(err) {
+        document.getElementById("message").innerHTML = "Error: " + err + ".";
+    }
+
+  }
+</script>
+
+</body>
+</html>

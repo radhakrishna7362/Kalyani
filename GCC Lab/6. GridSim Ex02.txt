@@ -1,0 +1,27 @@
+174N1A0584
+N.V.S.K. kALYANI
+4TH b.TECH cse
+sEC: c
+                                       
+                                            6. GridSim Program Example02
+
+
+C:\GridSim5-2\GridSim\examples>javac C:\GridSim5-2\GridSim\examples\gridsim\exam
+ple02\Example2.java
+
+C:\GridSim5-2\GridSim\examples>java gridsim.example02.Example2
+Starting example of how to create Grid users
+
+Creating 8 Gridlets
+Creating 3 Grid users
+
+Gridlet ID    User ID    length     file size    output size
+    0            0        3500        300        300
+    1            0        5000        500        500
+    2            0        9000        900        900
+    3            1        2345        120        256
+    4            1        13354        144        373
+    5            1        24678        102        317
+    6            2        10459        103        246
+    7            2        11496        141        319
+Finish the example

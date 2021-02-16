@@ -1,0 +1,57 @@
+N.V.S.K. Kalyani
+174n1a0584
+CSE - C
+  
+                                Aim 4: Creating an Application by using TEXTEDIT control.
+
+
+activity_main.xml:-
+
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Name"
+        android:id="@+id/user_name"/>
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Me"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/response"/>
+</LinearLayout>
+
+MainActivity.java:-
+
+package com.example.textedit;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Button;
+import android.view.View;
+import android.view.View.OnKeyListener;
+import android.view.KeyEvent;
+public class MainActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        final Button mButton= (Button) findViewById(R.id.button1);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                final TextView resp= (TextView) findViewById(R.id.response);
+                final EditText username=(EditText) findViewById(R.id.user_name);
+                resp.setText("Welcome  "+username.getText()+"!");
+            }
+        });
+    }
+}
